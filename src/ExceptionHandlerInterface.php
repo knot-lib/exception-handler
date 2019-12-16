@@ -14,6 +14,6 @@ interface ExceptionHandlerInterface
      *
      * @return boolean
      */
-    public function handleException(Throwable $e) : bool;
+    public function handleException(Throwable $e);
 }
 

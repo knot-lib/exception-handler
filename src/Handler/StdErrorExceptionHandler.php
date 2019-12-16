@@ -27,18 +27,14 @@ class StdErrorExceptionHandler implements ExceptionHandlerInterface
      * execute exception handlers
      *
      * @param Throwable $e     exception to handle
-     *
-     * @return boolean        TRUE means the exception is handled, otherwise FALSE
      */
-    public function handleException(Throwable $e) : bool
+    public function handleException(Throwable $e)
     {
         // Render exception
         $output = $this->renderer->output($e);
     
         // output
         fwrite(STDERR, $output . PHP_EOL);
-    
-        return true;
     }
 
 }

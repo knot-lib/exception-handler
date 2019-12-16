@@ -14,10 +14,8 @@ class HttpErrorHeaderExceptionHandler implements ExceptionHandlerInterface
      * handle an exception
      *
      * @param Throwable $e     exception to handle
-     *
-     * @return boolean
      */
-    public function handleException(Throwable $e) : bool
+    public function handleException(Throwable $e)
     {
         if ( $e instanceof HttpStatusException )
         {
@@ -67,12 +65,7 @@ class HttpErrorHeaderExceptionHandler implements ExceptionHandlerInterface
             $header_msg = $error_messages[$status] ?? '';
 
             header( "HTTP/1.0 {$status} {$header_msg}", true, $status );
-            
-            return true;
         }
-
-        return false;
     }
-
 }
 

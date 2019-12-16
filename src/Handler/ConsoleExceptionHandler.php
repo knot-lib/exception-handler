@@ -27,18 +27,14 @@ class ConsoleExceptionHandler implements ExceptionHandlerInterface
      * execute exception handlers
      *
      * @param Throwable $e     exception to handle
-     *
-     * @return boolean
      */
-    public function handleException(Throwable $e) : bool
+    public function handleException(Throwable $e)
     {
         // Get output exception
         $output = $this->renderer->output($e);
         
         // output
         echo $output;
-
-        return true;
     }
 
 }

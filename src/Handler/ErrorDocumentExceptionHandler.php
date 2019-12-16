@@ -28,10 +28,8 @@ class ErrorDocumentExceptionHandler implements ExceptionHandlerInterface
      * execute exception handlers
      *
      * @param Throwable $e     exception to handle
-     *
-     * @return boolean        TRUE means the exception is handled, otherwise FALSE
      */
-    public function handleException(Throwable $e) : bool
+    public function handleException(Throwable $e)
     {
         if ($e instanceof HttpStatusException)
         {
@@ -40,11 +38,7 @@ class ErrorDocumentExceptionHandler implements ExceptionHandlerInterface
             
             // output html
             echo $html;
-
-            return true;
         }
-
-        return false;
     }
 
 }

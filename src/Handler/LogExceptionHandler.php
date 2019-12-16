@@ -35,10 +35,8 @@ class LogExceptionHandler implements ExceptionHandlerInterface
      * execute exception handlers
      *
      * @param Throwable $e     exception to handle
-     *
-     * @return boolean        TRUE means the exception is handled, otherwise FALSE
      */
-    public function handleException(Throwable $e) : bool
+    public function handleException(Throwable $e)
     {
         // Render exception
         $output = $this->renderer->output($e);
@@ -47,8 +45,6 @@ class LogExceptionHandler implements ExceptionHandlerInterface
         $this->logger->error($output, [
             'exception' => $e,
         ]);
-    
-        return true;
     }
 
 }

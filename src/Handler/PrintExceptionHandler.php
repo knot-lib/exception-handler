@@ -27,15 +27,11 @@ class PrintExceptionHandler implements ExceptionHandlerInterface
      * execute exception handlers
      *
      * @param Throwable $e     exception to handle
-     *
-     * @return boolean        TRUE means the exception is handled, otherwise FALSE
      */
-    public function handleException(Throwable $e) : bool
+    public function handleException(Throwable $e)
     {
         // Render exception
         echo $this->renderer->output($e);
-
-        return true;
     }
 
 }
