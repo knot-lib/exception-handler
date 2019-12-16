@@ -6,7 +6,7 @@ namespace KnotLib\ExceptionHandler\DebugtraceRenderer;
 use Throwable;
 
 use Stk2k\Util\Util;
-use KnotLib\Exception\CalgamoException;
+use KnotLib\Exception\KnotPhpException;
 use KnotLib\ExceptionHandler\DebugtraceRendererInterface;
 
 class ConsoleDebugtraceRenderer implements DebugtraceRendererInterface
@@ -88,7 +88,7 @@ class ConsoleDebugtraceRenderer implements DebugtraceRendererInterface
 
 
         // get backtrace
-        if ( $first_exception instanceof CalgamoException ){
+        if ( $first_exception instanceof KnotPhpException ){
             $backtrace = $first_exception->getBackTraceList();
 
             $out .= PHP_EOL;

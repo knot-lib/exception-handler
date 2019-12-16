@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace KnotLib\ExceptionHandler\DebugtraceRenderer;
 
 use Stk2k\Util\Util;
-use KnotLib\Exception\CalgamoException;
+use KnotLib\Exception\KnotPhpException;
 use KnotLib\ExceptionHandler\DebugtraceRendererInterface;
 use KnotLib\ExceptionHandler\DebugtraceRenderer\Html\PhpSourceInfo;
 use KnotLib\Config\Config;
@@ -488,7 +488,7 @@ HTML_HEADER;
             $file = $e->getFile();
             $line = $e->getLine();
             $message = $e->getMessage();
-            $backtrace = ($e instanceof CalgamoException) ? $e->getBackTraceList() : NULL;
+            $backtrace = ($e instanceof KnotPhpException) ? $e->getBackTraceList() : NULL;
 
             $src = new PhpSourceInfo( $file, $line, 10 );
 
