@@ -1,35 +1,21 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotLib\ExceptionHandler\DebugtraceRenderer;
+namespace KnotLib\ExceptionHandler\Text;
 
 use Throwable;
 
-use Stk2k\Util\Util;
 use KnotLib\Exception\KnotPhpException;
 use KnotLib\ExceptionHandler\DebugtraceRendererInterface;
 
-class ConsoleDebugtraceRenderer implements DebugtraceRendererInterface
+class TextDebugtraceRenderer implements DebugtraceRendererInterface
 {
-    /** @var AdditionalDebugTraceRendererInterface */
-    private $additional;
-    
-    /**
-     * ConsoleDebugtraceRenderer constructor.
-     *
-     * @param AdditionalDebugTraceRendererInterface|null $additional
-     */
-    public function __construct(AdditionalDebugTraceRendererInterface $additional = null)
-    {
-        $this->additional = $additional;
-    }
-    
     /**
      * Render debug trace
      *
      * @param Throwable $e
      */
-    public function render( Throwable $e )
+    public function render(Throwable $e) : void
     {
         echo $this->output($e);
     }
@@ -41,23 +27,14 @@ class ConsoleDebugtraceRenderer implements DebugtraceRendererInterface
      *
      * @return string
      */
-    public function output( Throwable $e )
+    public function output(Throwable $e) : string
     {
         $out = '';
 
         $out .= "=============================================================" . PHP_EOL;
-        $out .= "Exception stack trace " . PHP_EOL;
+        $out .= "Exception stack trace" . PHP_EOL;
         $out .= "=============================================================" . PHP_EOL;
 
-        $out .= PHP_EOL;
-        $out .= "* Defined Constants *" . PHP_EOL;
-        $out .= "-------------------------------------------------------------" . PHP_EOL;
-        $declared_constants = Util::getUserDefinedConstants();
-        foreach( $declared_constants as $key => $value ){
-            $out .= "[$key] $value" . PHP_EOL;
-        }
-        $out .= "-------------------------------------------------------------" . PHP_EOL;
-    
         $out .= PHP_EOL;
         $out .= "* Exception Stack *" . PHP_EOL;
         $out .= "-------------------------------------------------------------" . PHP_EOL;
@@ -112,18 +89,6 @@ class ConsoleDebugtraceRenderer implements DebugtraceRendererInterface
 
                 $call_no ++;
             }
-        }
-        
-        // additional debugtrace
-        if ($this->additional)
-        {
-            $title = $this->additional->getAdditionalInfoTitle();
-            
-            $out .= PHP_EOL;
-            $out .= "* {$title} *" . PHP_EOL;
-            $out .= "-------------------------------------------------------------" . PHP_EOL;
-            
-            $this->additional->renderAdditionalInfo( $e, $out );
         }
     
         return $out;

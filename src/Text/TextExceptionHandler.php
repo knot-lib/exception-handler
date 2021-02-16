@@ -1,18 +1,17 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotLib\ExceptionHandler\Handler;
+namespace KnotLib\ExceptionHandler\Text;
 
+use KnotLib\ExceptionHandler\DebugtraceRendererInterface;
+use KnotLib\ExceptionHandler\ExceptionHandlerInterface;
 use Throwable;
 
-use KnotLib\ExceptionHandler\ExceptionHandlerInterface;
-use KnotLib\ExceptionHandler\DebugtraceRendererInterface;
-
-class PrintExceptionHandler implements ExceptionHandlerInterface
+class TextExceptionHandler implements ExceptionHandlerInterface
 {
     /** @var DebugtraceRendererInterface */
     private $renderer;
-    
+
     /**
      * Charcoal_ConsoleExceptionHandler constructor.
      *
@@ -22,17 +21,12 @@ class PrintExceptionHandler implements ExceptionHandlerInterface
     {
         $this->renderer = $renderer;
     }
-    
+
     /**
-     * execute exception handlers
-     *
-     * @param Throwable $e     exception to handle
+     * @param Throwable $e
      */
-    public function handleException(Throwable $e)
+    public function handleException(Throwable $e) : void
     {
-        // Render exception
-        echo $this->renderer->output($e);
+        $this->renderer->render($e);
     }
-
 }
-

@@ -11,9 +11,7 @@ interface ExceptionHandlerInterface
      * handle an exception
      *
      * @param Throwable $e     exception to handle
-     *
-     * @return boolean
      */
-    public function handleException(Throwable $e);
+    public function handleException(Throwable $e) : void;
 }
 

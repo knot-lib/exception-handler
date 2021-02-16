@@ -12,7 +12,7 @@ interface DebugtraceRendererInterface
      *
      * @param Throwable $e  exception to render
      */
-    public function render(Throwable $e);
+    public function render(Throwable $e) : void;
     
     /**
      * Output debug trace
@@ -21,6 +21,6 @@ interface DebugtraceRendererInterface
      *
      * @return string
      */
-    public function output(Throwable $e);
+    public function output(Throwable $e) : string;
 }
 
