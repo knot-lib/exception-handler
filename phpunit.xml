@@ -41,4 +41,9 @@
              charset="UTF-8" yui="true" highlight="true"
              lowUpperBound="35" highLowerBound="90"/>
     </logging>
+
+    <php>
+        <env name="XDEBUG_MODE" value="coverage"/>
+        <ini name="xdebug.mode" value="coverage"/>
+    </php>
 </phpunit>
