@@ -1,7 +1,7 @@
 {
   "name": "knot-lib/exception-handler",
   "description": "Exception handler library for kNot Framework",
-  "keywords": ["PHP","Exception","kNot Framework"],
+  "keywords": ["PHP","Exception","kNot Framework","Exception Handler"],
   "homepage": "https://github.com/knot-lib/exception-handler",
   "type": "library",
   "license": "MIT",
@@ -27,8 +27,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "KnotLib\\ExceptionHandler\\Test\\": "test/include/",
-      "KnotLib\\ExceptionHandler\\Demo\\": "demo/include/"
+      "KnotLib\\ExceptionHandler\\Test\\": "test/"
     }
   }
 }
