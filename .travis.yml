@@ -10,7 +10,7 @@ before_script:
   - phpenv config-add .travis.php.ini
   - composer install
   - composer dumpautoload -o
-  - php -r "\$map = include('vendor/composer/autoload_classmap.php'); file_put_contents('output.txt', print_r(\$map['KnotLib\\ExceptionHandler\\Text\\TextDebugtraceRenderer'],1));"
+  - php -r "\$map = include('vendor/composer/autoload_classmap.php'); file_put_contents('output.txt', print_r(\$map['KnotLib\ExceptionHandler\Text\TextDebugtraceRenderer'],1));"
   - cat 'output.txt'
 
 script:
