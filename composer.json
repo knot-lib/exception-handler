@@ -27,6 +27,7 @@
   },
   "autoload-dev": {
     "psr-4": {
+      "KnotLib\\ExceptionHandler\\": "src/",
       "KnotLib\\ExceptionHandler\\Test\\": "test/"
     }
   }
