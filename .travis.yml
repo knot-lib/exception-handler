@@ -10,7 +10,7 @@ before_script:
   - phpenv config-add .travis.php.ini
   - composer install
   - composer dumpautoload -o
-  - php -r "require_once('vendor/composer/autoload_classmap.php'); echo $baseDir;"
+  - php -r "require_once('vendor/composer/autoload_classmap.php'); print_r($baseDir);"
 
 script:
   - echo $(phpenv version-name)
