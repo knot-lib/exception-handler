@@ -9,8 +9,6 @@ php:
 before_script:
   - phpenv config-add .travis.php.ini
   - composer install
-  - composer dumpautoload -o
-  - php -r "\$map = include('vendor/composer/autoload_classmap.php'); echo('map=['.print_r(\$map['KnotLib\ExceptionHandler\Test\TextDebugtraceRendererTest'],1)).']';"
 
 script:
   - echo $(phpenv version-name)
