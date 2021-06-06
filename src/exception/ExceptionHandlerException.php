@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotLib\ExceptionHandler\Exception;
+namespace knotlib\exceptionhandler\exception;
 
 use Throwable;
 
-use KnotLib\Exception\KnotPhpException;
+use knotlib\exception\KnotPhpException;
 
 class ExceptionHandlerException extends KnotPhpException implements ExceptionHandlerExceptionInterface
 {

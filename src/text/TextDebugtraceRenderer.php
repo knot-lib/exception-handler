@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotLib\ExceptionHandler\Text;
+namespace knotlib\exceptionhandler\text;
 
 use Throwable;
 
-use KnotLib\Exception\KnotPhpException;
-use KnotLib\ExceptionHandler\DebugtraceRendererInterface;
+use knotlib\exception\KnotPhpException;
+use knotlib\exceptionhandler\DebugtraceRendererInterface;
 
 class TextDebugtraceRenderer implements DebugtraceRendererInterface
 {

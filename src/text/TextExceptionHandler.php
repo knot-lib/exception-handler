@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotLib\ExceptionHandler\Text;
+namespace knotlib\exceptionhandler\text;
 
-use KnotLib\ExceptionHandler\DebugtraceRendererInterface;
-use KnotLib\ExceptionHandler\ExceptionHandlerInterface;
+use knotlib\exceptionhandler\DebugtraceRendererInterface;
+use knotlib\exceptionhandler\ExceptionHandlerInterface;
 use Throwable;
 
 class TextExceptionHandler implements ExceptionHandlerInterface
